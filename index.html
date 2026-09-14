@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shroom Servers — Minecraft Server Setup</title>
   <meta name="description" content="Affordable Minecraft server setup and configuration. Get your Minecraft server ready for just £5." />
+
   <style>
     :root{
       --bg:#070a0d;
@@ -18,8 +20,13 @@
       --shadow:0 25px 70px rgba(0,0,0,.45);
       --radius:20px;
     }
+
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       margin:0;
       font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
@@ -31,134 +38,504 @@
       line-height:1.6;
       overflow-x:hidden;
     }
-    a{text-decoration:none;color:inherit}
-    .container{width:min(1120px,calc(100% - 40px));margin:auto}
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .container{
+      width:min(1120px,calc(100% - 40px));
+      margin:auto;
+    }
+
     nav{
-      position:sticky;top:0;z-index:50;
+      position:sticky;
+      top:0;
+      z-index:50;
       backdrop-filter:blur(18px);
       background:rgba(7,10,13,.72);
       border-bottom:1px solid var(--border);
     }
-    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:-.04em}
+
+    .nav-inner{
+      height:72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:11px;
+      font-weight:900;
+      letter-spacing:-.04em;
+    }
+
     .logo{
-      width:38px;height:38px;border-radius:10px;
-      display:grid;place-items:center;
+      width:38px;
+      height:38px;
+      border-radius:10px;
+      display:grid;
+      place-items:center;
       background:linear-gradient(145deg,#8aff9e,#39bd65);
       color:#061008;
       box-shadow:0 8px 28px rgba(103,224,138,.2);
       font-size:19px;
     }
-    .brand span{font-size:18px}
-    .navlinks{display:flex;gap:26px;color:#aeb9bf;font-size:14px;font-weight:650}
-    .navlinks a:hover{color:white}
-    .nav-cta{padding:10px 15px;border:1px solid rgba(103,224,138,.35);border-radius:10px;color:var(--accent)!important}
-    .hero{padding:105px 0 90px;position:relative}
-    .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:70px;align-items:center}
+
+    .brand span{
+      font-size:18px;
+    }
+
+    .navlinks{
+      display:flex;
+      gap:26px;
+      color:#aeb9bf;
+      font-size:14px;
+      font-weight:650;
+    }
+
+    .navlinks a:hover{
+      color:white;
+    }
+
+    .nav-cta{
+      padding:10px 15px;
+      border:1px solid rgba(103,224,138,.35);
+      border-radius:10px;
+      color:var(--accent)!important;
+    }
+
+    .hero{
+      padding:105px 0 90px;
+      position:relative;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.12fr .88fr;
+      gap:70px;
+      align-items:center;
+    }
+
     .eyebrow{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:7px 11px;border:1px solid var(--border);border-radius:999px;
-      background:rgba(255,255,255,.035);color:#b7c3c9;font-size:12px;font-weight:800;
-      text-transform:uppercase;letter-spacing:.1em;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 11px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background:rgba(255,255,255,.035);
+      color:#b7c3c9;
+      font-size:12px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.1em;
     }
-    .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent)}
-    h1{font-size:clamp(46px,6vw,78px);line-height:.98;letter-spacing:-.065em;margin:22px 0 20px;max-width:760px}
-    h1 .green{color:var(--accent)}
-    .hero p{font-size:18px;color:var(--muted);max-width:640px;margin:0 0 30px}
-    .actions{display:flex;gap:12px;flex-wrap:wrap}
+
+    .dot{
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:var(--accent);
+      box-shadow:0 0 14px var(--accent);
+    }
+
+    h1{
+      font-size:clamp(46px,6vw,78px);
+      line-height:.98;
+      letter-spacing:-.065em;
+      margin:22px 0 20px;
+      max-width:760px;
+    }
+
+    h1 .green{
+      color:var(--accent);
+    }
+
+    .hero p{
+      font-size:18px;
+      color:var(--muted);
+      max-width:640px;
+      margin:0 0 30px;
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
     .btn{
-      padding:14px 19px;border-radius:12px;font-weight:850;font-size:14px;
-      border:1px solid var(--border);transition:.2s transform,.2s background;
+      padding:14px 19px;
+      border-radius:12px;
+      font-weight:850;
+      font-size:14px;
+      border:1px solid var(--border);
+      transition:.2s transform,.2s background;
     }
-    .btn:hover{transform:translateY(-2px)}
-    .btn-primary{background:var(--accent);color:#071009;border-color:var(--accent);box-shadow:0 12px 35px rgba(103,224,138,.17)}
-    .btn-secondary{background:rgba(255,255,255,.04)}
+
+    .btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn-primary{
+      background:var(--accent);
+      color:#071009;
+      border-color:var(--accent);
+      box-shadow:0 12px 35px rgba(103,224,138,.17);
+    }
+
+    .btn-secondary{
+      background:rgba(255,255,255,.04);
+    }
+
     .server-card{
       background:linear-gradient(155deg,rgba(20,29,35,.98),rgba(10,14,18,.98));
-      border:1px solid var(--border);border-radius:24px;padding:24px;box-shadow:var(--shadow);
-      position:relative;overflow:hidden;
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
     }
+
     .server-card:before{
-      content:"";position:absolute;inset:-80px -80px auto auto;width:180px;height:180px;
-      background:rgba(103,224,138,.13);filter:blur(35px);border-radius:50%;
+      content:"";
+      position:absolute;
+      inset:-80px -80px auto auto;
+      width:180px;
+      height:180px;
+      background:rgba(103,224,138,.13);
+      filter:blur(35px);
+      border-radius:50%;
     }
-    .window-top{display:flex;gap:7px;margin-bottom:20px}
-    .window-top i{width:8px;height:8px;border-radius:50%;background:#39444b}
-    .terminal{background:#070a0d;border:1px solid var(--border);border-radius:14px;padding:18px;font:12px/1.8 ui-monospace,SFMono-Regular,Menlo,monospace;color:#9aa8ae}
-    .terminal b{color:var(--accent)}
-    .terminal .white{color:#e9eeee}
+
+    .window-top{
+      display:flex;
+      gap:7px;
+      margin-bottom:20px;
+    }
+
+    .window-top i{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:#39444b;
+    }
+
+    .terminal{
+      background:#070a0d;
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:18px;
+      font:12px/1.8 ui-monospace,SFMono-Regular,Menlo,monospace;
+      color:#9aa8ae;
+    }
+
+    .terminal b{
+      color:var(--accent);
+    }
+
+    .terminal .white{
+      color:#e9eeee;
+    }
+
     .price{
-      margin-top:20px;padding:18px;border-radius:15px;background:rgba(103,224,138,.07);
-      border:1px solid rgba(103,224,138,.2);display:flex;align-items:end;justify-content:space-between
+      margin-top:20px;
+      padding:18px;
+      border-radius:15px;
+      background:rgba(103,224,138,.07);
+      border:1px solid rgba(103,224,138,.2);
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
     }
-    .price strong{font-size:42px;line-height:1;letter-spacing:-.05em}
-    .price small{color:var(--muted)}
-    section{padding:90px 0}
-    .section-head{max-width:680px;margin-bottom:38px}
-    .kicker{color:var(--accent);font-size:12px;text-transform:uppercase;letter-spacing:.13em;font-weight:900}
-    h2{font-size:clamp(32px,4vw,48px);line-height:1.05;letter-spacing:-.05em;margin:9px 0 12px}
-    .section-head p{color:var(--muted);margin:0}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+
+    .price strong{
+      font-size:42px;
+      line-height:1;
+      letter-spacing:-.05em;
+    }
+
+    .price small{
+      color:var(--muted);
+    }
+
+    section{
+      padding:90px 0;
+    }
+
+    .section-head{
+      max-width:680px;
+      margin-bottom:38px;
+    }
+
+    .kicker{
+      color:var(--accent);
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.13em;
+      font-weight:900;
+    }
+
+    h2{
+      font-size:clamp(32px,4vw,48px);
+      line-height:1.05;
+      letter-spacing:-.05em;
+      margin:9px 0 12px;
+    }
+
+    .section-head p{
+      color:var(--muted);
+      margin:0;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:15px;
+    }
+
     .card{
-      background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:var(--radius);
-      padding:25px;min-height:205px;transition:.25s transform,.25s border-color,.25s background;
+      background:rgba(255,255,255,.025);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:25px;
+      min-height:205px;
+      transition:.25s transform,.25s border-color,.25s background;
     }
-    .card:hover{transform:translateY(-5px);border-color:rgba(103,224,138,.28);background:rgba(255,255,255,.04)}
-    .icon{font-size:25px;margin-bottom:19px}
-    .card h3{margin:0 0 7px;font-size:18px}
-    .card p{margin:0;color:var(--muted);font-size:14px}
-    .pricing{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}
+
+    .card:hover{
+      transform:translateY(-5px);
+      border-color:rgba(103,224,138,.28);
+      background:rgba(255,255,255,.04);
+    }
+
+    .icon{
+      font-size:25px;
+      margin-bottom:19px;
+    }
+
+    .card h3{
+      margin:0 0 7px;
+      font-size:18px;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .pricing{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      align-items:stretch;
+    }
+
     .offer{
       background:linear-gradient(145deg,#10191a,#0c1114);
-      border:1px solid rgba(103,224,138,.35);border-radius:24px;padding:32px;
-      box-shadow:0 20px 60px rgba(0,0,0,.25)
+      border:1px solid rgba(103,224,138,.35);
+      border-radius:24px;
+      padding:32px;
+      box-shadow:0 20px 60px rgba(0,0,0,.25);
     }
-    .offer-top{display:flex;justify-content:space-between;gap:15px;align-items:start}
-    .badge{font-size:11px;font-weight:900;color:#071009;background:var(--accent);padding:7px 9px;border-radius:999px}
-    .offer-price{font-size:60px;font-weight:950;letter-spacing:-.07em;line-height:1;margin:20px 0 5px}
-    .offer-sub{color:var(--muted);font-size:13px}
-    ul{padding:0;margin:23px 0;list-style:none}
-    li{padding:9px 0;color:#c9d2d6;font-size:14px;border-bottom:1px solid rgba(255,255,255,.06)}
-    li:last-child{border-bottom:0}
-    li:before{content:"✓";color:var(--accent);font-weight:900;margin-right:10px}
-    .visuals{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+
+    .offer-top{
+      display:flex;
+      justify-content:space-between;
+      gap:15px;
+      align-items:start;
+    }
+
+    .badge{
+      font-size:11px;
+      font-weight:900;
+      color:#071009;
+      background:var(--accent);
+      padding:7px 9px;
+      border-radius:999px;
+    }
+
+    .offer-price{
+      font-size:60px;
+      font-weight:950;
+      letter-spacing:-.07em;
+      line-height:1;
+      margin:20px 0 5px;
+    }
+
+    .offer-sub{
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    ul{
+      padding:0;
+      margin:23px 0;
+      list-style:none;
+    }
+
+    li{
+      padding:9px 0;
+      color:#c9d2d6;
+      font-size:14px;
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    li:last-child{
+      border-bottom:0;
+    }
+
+    li:before{
+      content:"✓";
+      color:var(--accent);
+      font-weight:900;
+      margin-right:10px;
+    }
+
+    .visuals{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:15px;
+    }
+
     .placeholder{
-      aspect-ratio:16/10;border-radius:18px;border:1px dashed rgba(255,255,255,.16);
+      aspect-ratio:16/10;
+      border-radius:18px;
+      border:1px dashed rgba(255,255,255,.16);
       background:linear-gradient(135deg,rgba(255,255,255,.045),rgba(255,255,255,.015));
-      display:flex;align-items:center;justify-content:center;text-align:center;color:#66747c;
-      font-size:13px;padding:20px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:#66747c;
+      font-size:13px;
+      padding:20px;
     }
-    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-    .step{padding:24px;border-top:1px solid var(--border)}
-    .num{font:700 12px ui-monospace,monospace;color:var(--accent)}
-    .step h3{font-size:17px;margin:17px 0 6px}.step p{font-size:13px;color:var(--muted);margin:0}
+
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+    }
+
+    .step{
+      padding:24px;
+      border-top:1px solid var(--border);
+    }
+
+    .num{
+      font:700 12px ui-monospace,monospace;
+      color:var(--accent);
+    }
+
+    .step h3{
+      font-size:17px;
+      margin:17px 0 6px;
+    }
+
+    .step p{
+      font-size:13px;
+      color:var(--muted);
+      margin:0;
+    }
+
     .cta{
-      text-align:center;padding:65px 25px;border:1px solid var(--border);border-radius:26px;
-      background:radial-gradient(circle at center,rgba(103,224,138,.09),transparent 55%),rgba(255,255,255,.02)
+      text-align:center;
+      padding:65px 25px;
+      border:1px solid var(--border);
+      border-radius:26px;
+      background:
+        radial-gradient(circle at center,rgba(103,224,138,.09),transparent 55%),
+        rgba(255,255,255,.02);
     }
-    .cta p{color:var(--muted);max-width:570px;margin:0 auto 25px}
-    footer{padding:35px 0 45px;border-top:1px solid var(--border);color:#6f7b82;font-size:12px}
-    footer .container{display:flex;justify-content:space-between;gap:20px}
+
+    .cta p{
+      color:var(--muted);
+      max-width:570px;
+      margin:0 auto 25px;
+    }
+
+    footer{
+      padding:35px 0 45px;
+      border-top:1px solid var(--border);
+      color:#6f7b82;
+      font-size:12px;
+    }
+
+    footer .container{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+    }
+
     @media(max-width:800px){
-      .hero-grid,.pricing{grid-template-columns:1fr}
-      .cards{grid-template-columns:1fr 1fr}
-      .steps{grid-template-columns:1fr 1fr}
-      .hero{padding-top:70px}.navlinks{display:none}
+      .hero-grid,
+      .pricing{
+        grid-template-columns:1fr;
+      }
+
+      .cards{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .steps{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .hero{
+        padding-top:70px;
+      }
+
+      .navlinks{
+        display:none;
+      }
     }
+
     @media(max-width:560px){
-      .container{width:min(100% - 28px,1120px)}
-      .cards,.visuals,.steps{grid-template-columns:1fr}
-      h1{font-size:49px}
-      section{padding:65px 0}
-      .server-card{padding:16px}
-      footer .container{display:block}
+      .container{
+        width:min(100% - 28px,1120px);
+      }
+
+      .cards,
+      .visuals,
+      .steps{
+        grid-template-columns:1fr;
+      }
+
+      h1{
+        font-size:49px;
+      }
+
+      section{
+        padding:65px 0;
+      }
+
+      .server-card{
+        padding:16px;
+      }
+
+      footer .container{
+        display:block;
+      }
     }
   </style>
 </head>
+
 <body>
+
   <nav>
     <div class="container nav-inner">
-      <a class="brand" href="#"><div class="logo">✦</div><span>SHROOM SERVERS</span></a>
+      <a class="brand" href="#">
+        <div class="logo">✦</div>
+        <span>SHROOM SERVERS</span>
+      </a>
+
       <div class="navlinks">
         <a href="#services">Services</a>
         <a href="#work">My Work</a>
@@ -169,64 +546,205 @@
   </nav>
 
   <main>
+
+    <!-- HERO -->
     <section class="hero">
       <div class="container hero-grid">
+
         <div>
-          <div class="eyebrow"><span class="dot"></span> Minecraft server setup</div>
-          <h1>Your server.<br><span class="green">Ready to play.</span></h1>
-          <p>I set up and configure Minecraft servers for small SMPs, friend groups and creators — without the headache.</p>
-          <div class="actions">
-            <a class="btn btn-primary" href="#contact">Get my server set up — £5</a>
-            <a class="btn btn-secondary" href="#services">See what I can do</a>
+
+          <div class="eyebrow">
+            <span class="dot"></span>
+            Minecraft server setup
           </div>
+
+          <h1>
+            Your server.<br>
+            <span class="green">Ready to play.</span>
+          </h1>
+
+          <p>
+            I set up and configure Minecraft servers for small SMPs,
+            friend groups and creators — without the headache.
+          </p>
+
+          <div class="actions">
+
+            <a class="btn btn-primary" href="#contact">
+              Get my server set up — £5
+            </a>
+
+            <a class="btn btn-secondary" href="#services">
+              See the services I provide
+            </a>
+
+            <!-- NEW BUTTON -->
+            <a class="btn btn-secondary" href="#work">
+              See what I can do
+            </a>
+
+          </div>
+
         </div>
 
         <div class="server-card">
-          <div class="window-top"><i></i><i></i><i></i></div>
+
+          <div class="window-top">
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+
           <div class="terminal">
-            <div><span class="white">shroom@server</span>:~$ start server</div>
+            <div>
+              <span class="white">shroom@server</span>:~$ start server
+            </div>
+
             <div>Loading Minecraft...</div>
             <div>Loading plugins...</div>
             <div>Configuring server.properties...</div>
+
             <br>
-            <div><b>✓ Server ready!</b></div>
+
+            <div>
+              <b>✓ Server ready!</b>
+            </div>
+
             <div>Players can now connect.</div>
           </div>
+
           <div class="price">
-            <div><small>STARTER SETUP</small><br><strong>£5</strong></div>
-            <div style="text-align:right;color:#9aa8ae;font-size:12px">Simple pricing<br>No hidden fees</div>
+
+            <div>
+              <small>STARTER SETUP</small>
+              <br>
+              <strong>£5</strong>
+            </div>
+
+            <div style="text-align:right;color:#9aa8ae;font-size:12px">
+              Simple pricing
+              <br>
+              No hidden fees
+            </div>
+
           </div>
+
         </div>
+
       </div>
     </section>
 
+
+    <!-- SERVICES -->
     <section id="services">
       <div class="container">
+
         <div class="section-head">
+
           <div class="kicker">Services</div>
-          <h2>Everything you need to get started.</h2>
-          <p>Focused on practical Minecraft server setup and configuration for players who just want their server to work.</p>
+
+          <h2>
+            Everything you need to get started.
+          </h2>
+
+          <p>
+            Focused on practical Minecraft server setup and configuration
+            for players who just want their server to work.
+          </p>
+
         </div>
+
         <div class="cards">
-          <div class="card"><div class="icon">🖥️</div><h3>Server Setup</h3><p>Get your Java Edition server installed, configured and ready to play.</p></div>
-          <div class="card"><div class="icon">🔧</div><h3>Plugins & Mods</h3><p>I'll install and configure the plugins or mods you want to use.</p></div>
-          <div class="card"><div class="icon">⚙️</div><h3>Configuration</h3><p>Game rules, difficulty, PvP, MOTD, view distance and other settings.</p></div>
-          <div class="card"><div class="icon">🧩</div><h3>Modded Servers</h3><p>Help getting Fabric or other supported modded servers running correctly.</p></div>
-          <div class="card"><div class="icon">🛠️</div><h3>Troubleshooting</h3><p>I'll investigate common startup, configuration and connection problems.</p></div>
-          <div class="card"><div class="icon">🎮</div><h3>Gaming Setup</h3><p>Basic help getting your friends connected and ready to play.</p></div>
+
+          <div class="card">
+            <div class="icon">🖥️</div>
+            <h3>Server Setup</h3>
+            <p>
+              Get your Java Edition server installed,
+              configured and ready to play.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icon">🔧</div>
+            <h3>Plugins & Mods</h3>
+            <p>
+              I'll install and configure the plugins
+              or mods you want to use.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icon">⚙️</div>
+            <h3>Configuration</h3>
+            <p>
+              Game rules, difficulty, PvP, MOTD,
+              view distance and other settings.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icon">🧩</div>
+            <h3>Modded Servers</h3>
+            <p>
+              Help getting Fabric or other supported
+              modded servers running correctly.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icon">🛠️</div>
+            <h3>Troubleshooting</h3>
+            <p>
+              I'll investigate common startup,
+              configuration and connection problems.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icon">🎮</div>
+            <h3>Gaming Setup</h3>
+            <p>
+              Basic help getting your friends connected
+              and ready to play.
+            </p>
+          </div>
+
         </div>
       </div>
     </section>
 
+
+    <!-- OFFER -->
     <section id="offer">
       <div class="container pricing">
+
         <div class="offer">
+
           <div class="offer-top">
-            <div><div class="kicker">Starter package</div><h2 style="margin-top:7px">Minecraft Server Setup</h2></div>
-            <div class="badge">£5</div>
+
+            <div>
+              <div class="kicker">Starter package</div>
+
+              <h2 style="margin-top:7px">
+                Minecraft Server Setup
+              </h2>
+            </div>
+
+            <div class="badge">
+              £5
+            </div>
+
           </div>
-          <div class="offer-price">£5</div>
-          <div class="offer-sub">One-time introductory price</div>
+
+          <div class="offer-price">
+            £5
+          </div>
+
+          <div class="offer-sub">
+            One-time introductory price
+          </div>
+
           <ul>
             <li>Basic server configuration</li>
             <li>Plugins or mods installed</li>
@@ -235,74 +753,263 @@
             <li>Connection help</li>
             <li>Basic troubleshooting</li>
           </ul>
-          <a class="btn btn-primary" style="display:block;text-align:center" href="#contact">I want the £5 setup</a>
+
+          <a
+            class="btn btn-primary"
+            style="display:block;text-align:center"
+            href="#contact"
+          >
+            I want the £5 setup
+          </a>
+
         </div>
+
 
         <div>
-          <div class="section-head" style="margin-bottom:20px">
-            <div class="kicker">Good to know</div>
-            <h2>Built for small SMPs & friend groups.</h2>
-            <p>Tell me what you're trying to build before you pay. If your setup is more complicated than the £5 package, I'll explain what would be involved first.</p>
+
+          <div
+            class="section-head"
+            style="margin-bottom:20px"
+          >
+
+            <div class="kicker">
+              Good to know
+            </div>
+
+            <h2>
+              Built for small SMPs & friend groups.
+            </h2>
+
+            <p>
+              Tell me what you're trying to build before you pay.
+              If your setup is more complicated than the £5 package,
+              I'll explain what would be involved first.
+            </p>
+
           </div>
+
           <div class="card" style="min-height:auto">
-            <h3>What I don't promise</h3>
-            <p style="margin-top:8px">I'm not claiming to be a professional hosting company. I focus on affordable setup and configuration for Minecraft players, creators and small communities.</p>
+
+            <h3>
+              What I don't promise
+            </h3>
+
+            <p style="margin-top:8px">
+              I'm not claiming to be a professional hosting company.
+              I focus on affordable setup and configuration for
+              Minecraft players, creators and small communities.
+            </p>
+
           </div>
+
         </div>
+
       </div>
     </section>
 
+
+    <!-- PORTFOLIO / PREVIOUS WORK -->
     <section id="work">
-      <div class="container">
-        <div class="section-head">
-          <div class="kicker">Portfolio</div>
-          <h2>Some of my work.</h2>
-          <p>Replace these placeholders with screenshots of servers, configurations and projects you've actually completed.</p>
-        </div>
-        <div class="visuals">
-          <div class="placeholder">ADD IMAGE<br><br>Server setup / console screenshot</div>
-          <div class="placeholder">ADD IMAGE<br><br>Plugin configuration screenshot</div>
-          <div class="placeholder">ADD IMAGE<br><br>Custom SMP / spawn screenshot</div>
-          <div class="placeholder">ADD IMAGE<br><br>Modded server screenshot</div>
-        </div>
-      </div>
-    </section>
 
-    <section id="how">
       <div class="container">
-        <div class="section-head">
-          <div class="kicker">Simple process</div>
-          <h2>Four steps. No nonsense.</h2>
-        </div>
-        <div class="steps">
-          <div class="step"><div class="num">01</div><h3>Tell me what you want</h3><p>Tell me what kind of server you're making and what you need.</p></div>
-          <div class="step"><div class="num">02</div><h3>I set it up</h3><p>I configure the server and install the requested software.</p></div>
-          <div class="step"><div class="num">03</div><h3>You test it</h3><p>You connect and check that everything works as expected.</p></div>
-          <div class="step"><div class="num">04</div><h3>You're ready</h3><p>Make the world, invite your friends and start playing.</p></div>
-        </div>
-      </div>
-    </section>
 
-    <section id="contact">
-      <div class="container">
-        <div class="cta">
-          <div class="kicker">Let's build it</div>
-          <h2>Got a Minecraft server in mind?</h2>
-          <p>Send me what you're trying to set up and I'll let you know if I can help. Basic server setup starts at just £5.</p>
-          <!-- Replace the href below with your Discord invite, email, or contact page. -->
-          <div class="actions" style="justify-content:center">
-          <a class="btn btn-primary" href="mailto:shroomworkscontact@gmail.com?subject=Minecraft%20Server%20Setup">Email me about a server</a>
-          <a class="btn btn-secondary" href="https://discord.com/users/ImperialShroom" target="_blank" rel="noopener noreferrer">Message me on Discord</a>
+        <div class="section-head">
+
+          <div class="kicker">
+            Portfolio
           </div>
+
+          <h2>
+            Some of my work.
+          </h2>
+
+          <p>
+            Replace these placeholders with screenshots of servers,
+            configurations and projects you've actually completed.
+          </p>
+
         </div>
+
+
+        <div class="visuals">
+
+          <div class="placeholder">
+            ADD IMAGE
+            <br><br>
+            Server setup / console screenshot
+          </div>
+
+          <div class="placeholder">
+            ADD IMAGE
+            <br><br>
+            Plugin configuration screenshot
+          </div>
+
+          <div class="placeholder">
+            ADD IMAGE
+            <br><br>
+            Custom SMP / spawn screenshot
+          </div>
+
+          <div class="placeholder">
+            ADD IMAGE
+            <br><br>
+            Modded server screenshot
+          </div>
+
+        </div>
+
       </div>
+
     </section>
+
+
+    <!-- HOW IT WORKS -->
+    <section id="how">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="kicker">
+            Simple process
+          </div>
+
+          <h2>
+            Four steps. No nonsense.
+          </h2>
+
+        </div>
+
+
+        <div class="steps">
+
+          <div class="step">
+            <div class="num">01</div>
+
+            <h3>
+              Tell me what you want
+            </h3>
+
+            <p>
+              Tell me what kind of server you're making
+              and what you need.
+            </p>
+          </div>
+
+
+          <div class="step">
+            <div class="num">02</div>
+
+            <h3>
+              I set it up
+            </h3>
+
+            <p>
+              I configure the server and install
+              the requested software.
+            </p>
+          </div>
+
+
+          <div class="step">
+            <div class="num">03</div>
+
+            <h3>
+              You test it
+            </h3>
+
+            <p>
+              You connect and check that everything
+              works as expected.
+            </p>
+          </div>
+
+
+          <div class="step">
+            <div class="num">04</div>
+
+            <h3>
+              You're ready
+            </h3>
+
+            <p>
+              Make the world, invite your friends
+              and start playing.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+      <div class="container">
+
+        <div class="cta">
+
+          <div class="kicker">
+            Let's build it
+          </div>
+
+          <h2>
+            Got a Minecraft server in mind?
+          </h2>
+
+          <p>
+            Send me what you're trying to set up and I'll let you know
+            if I can help. Basic server setup starts at just £5.
+          </p>
+
+          <div
+            class="actions"
+            style="justify-content:center"
+          >
+
+            <a
+              class="btn btn-primary"
+              href="mailto:shroomworkscontact@gmail.com?subject=Minecraft%20Server%20Setup"
+            >
+              Email me about a server
+            </a>
+
+            <a
+              class="btn btn-secondary"
+              href="https://discord.com/users/ImperialShroom"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Message me on Discord
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
   </main>
 
+
   <footer>
+
     <div class="container">
-      <div>Minecraft server setup • Affordable • Simple</div>
+
+      <div>
+        Minecraft server setup • Affordable • Simple
+      </div>
+
     </div>
+
   </footer>
+
 </body>
 </html>
+```
