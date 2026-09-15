@@ -1,16 +1,14 @@
 PORTFOLIO IMAGES
 
-Upload your portfolio screenshots into this folder.
+Upload these 6 screenshots into this folder using these exact filenames:
 
-Suggested filenames:
-- server-help.jpg
-- custom-plugins.jpg
-- custom-tab.jpg
+- serverconsole.png
+- serverspawn.png
+- ownermotag.png
+- servershop.png
+- servercustomtablist.png
+- serverlistmotd.png
 
-Then the portfolio image tags in serveroffer.html should use:
+The portfolio section in serveroffer.html already points to these filenames, so you only need to upload the six images here.
 
-<img src="images/server-help.jpg" alt="Minecraft server troubleshooting and setup">
-<img src="images/custom-plugins.jpg" alt="Custom Minecraft plugins and shop setup">
-<img src="images/custom-tab.jpg" alt="Custom Minecraft server list description">
-
-You can use .png instead of .jpg — just make sure the filename in the HTML matches the uploaded file exactly.
+IMPORTANT: filenames are case-sensitive on GitHub Pages. Keep the spelling exactly as shown above.
