@@ -1,8 +1,0 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Payment confirmed</title></head><body><main><h1 id="title">Checking payment...</h1><p id="message">Please wait while your payment is verified.</p><p id="status">Payment status: CHECKING</p><a href="/">Back to Shroom Alerts</a></main><script>
-const id=new URLSearchParams(location.search).get('session_id');
-async function verify(){
- if(!id){title.textContent='Payment not confirmed';status.textContent='Payment status: UNPAID';return;}
- try{const r=await fetch('/api/payment-status?session_id='+encodeURIComponent(id));const d=await r.json();if(r.ok&&d.paid){title.textContent='Payment confirmed!';message.textContent='Your Shroom Alert order has been paid successfully.';status.textContent='Payment status: PAID';}else{title.textContent='Payment not confirmed';status.textContent='Payment status: UNPAID';}}catch(e){title.textContent='Could not verify payment';status.textContent='Payment status: UNKNOWN';}}
-verify();
-</script></main></body></html>
